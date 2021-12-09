@@ -187,6 +187,8 @@ let
 
 in
   rec {
+    inherit fetchTree;
+
     defaultNix =
       result
       // (if result ? defaultPackage.${system} then { default = result.defaultPackage.${system}; } else {});
